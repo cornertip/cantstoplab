@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowDownRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import cantstopLogo from "@/assets/cantstop-logo.png";
+import logoFavicon from "@/assets/logo-favicon.jpg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -15,45 +16,49 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
-      <div className="container mx-auto px-4 flex justify-end">
-        {/* Single white pill containing logo + nav + CTA */}
-        <div className="hidden md:flex items-center rounded-full bg-card shadow-[0_2px_24px_-4px_rgba(0,0,0,0.1)] transition-all duration-500 pl-6 pr-1 ml-auto">
-          <a href="#" className="flex-shrink-0 mr-8">
-            <img src={cantstopLogo} alt="CantStopLab" className="h-8 object-contain" />
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo - swap to favicon on sticky */}
+        <a href="#" className="z-10">
+          {scrolled ? (
+            <div className="h-10 rounded-full bg-card/90 backdrop-blur-md flex items-center justify-center shadow-md transition-all duration-300 px-3 border border-border/60">
+              <img src={logoFavicon} alt="CantStopLab" className="h-6 object-contain rounded-sm" />
+            </div>
+          ) : (
+            <img src={cantstopLogo} alt="CantStopLab" className="h-8 transition-all duration-300" />
+          )}
+        </a>
+
+        {/* Desktop Nav */}
+        <div className={`hidden md:flex items-center rounded-full border border-border/60 backdrop-blur-md transition-all duration-500 ${scrolled ? "bg-card/90 shadow-lg" : "bg-card/70"}`}>
+          <a href="#servizi" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Servizi
           </a>
-
-          <div className="flex items-center">
-            {["Servizi", "Casi Studio", "Chi Siamo", "Blog"].map((label, i) => (
-              <span key={label} className="flex items-center">
-                {i > 0 && <span className="w-px h-5 bg-border" />}
-                <a
-                  href={`#${label === "Casi Studio" ? "portfolio" : label === "Chi Siamo" ? "chi-siamo" : label.toLowerCase()}`}
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3"
-                >
-                  {label}
-                </a>
-              </span>
-            ))}
-          </div>
-
+          <span className="w-px h-5 bg-border" />
+          <a href="#portfolio" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Casi Studio
+          </a>
+          <span className="w-px h-5 bg-border" />
+          <a href="#chi-siamo" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Chi Siamo
+          </a>
+          <span className="w-px h-5 bg-border" />
+          <a href="#blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Blog
+          </a>
+          <span className="w-px h-5 bg-border" />
           <a
             href="#contatti"
-            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 my-1 ml-4 transition-colors duration-300 group"
+            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 transition-colors duration-300 group"
           >
             Contatti
             <ArrowDownRight size={16} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
           </a>
         </div>
 
-        {/* Mobile: logo + hamburger */}
-        <div className="md:hidden flex items-center justify-between rounded-full bg-card shadow-[0_2px_24px_-4px_rgba(0,0,0,0.1)] px-5 py-3">
-          <a href="#">
-            <img src={cantstopLogo} alt="CantStopLab" className="h-6 object-contain" />
-          </a>
-          <button className="text-foreground" onClick={() => setOpen(!open)}>
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        {/* Mobile toggle */}
+        <button className="md:hidden text-foreground z-10" onClick={() => setOpen(!open)}>
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       {/* Mobile menu */}
@@ -64,7 +69,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden absolute top-full left-4 right-4 bg-background/95 backdrop-blur-xl rounded-3xl border border-primary/15 shadow-2xl p-6 space-y-1"
+            className="md:hidden absolute top-full left-4 right-4 bg-card/95 backdrop-blur-xl rounded-3xl border border-border/60 shadow-2xl p-6 space-y-1"
           >
             {[
               { href: "#servizi", label: "Servizi" },
