@@ -1,5 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { TrendingUp, Target, Zap } from "lucide-react";
+import { TrendingUp, Target, Zap, ArrowDownRight } from "lucide-react";
 import foodBg from "@/assets/food-case-study-bg.jpg";
 
 const CaseStudy = () => {
