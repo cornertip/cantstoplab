@@ -22,7 +22,7 @@ const FounderSection = () => {
               La tecnica è niente senza <span className="italic text-primary">passione</span>
             </h2>
             <p className="text-muted-foreground font-sans leading-relaxed max-w-lg">
-              Siamo un team di creativi e strategist ossessionati dai vertical video. Crediamo che ogni brand abbia una storia da raccontare — noi la rendiamo impossibile da ignorare.
+              CantStopLab è una Social Media Marketing Agency nata dalla passione per i contenuti digitali. Il nostro team di creativi e strategist è specializzato in short video, social advertising e personal branding. Aiutiamo brand e professionisti a costruire una presenza online che converte, con strategie data-driven e contenuti impossibili da ignorare.
             </p>
           </div>
 
