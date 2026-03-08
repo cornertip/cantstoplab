@@ -1,36 +1,94 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ArrowDownRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#" className="text-xl font-display font-black tracking-tight text-foreground">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#" className="text-xl font-sans font-black tracking-tight text-foreground z-10">
           CantStop<span className="text-primary">Lab</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#servizi" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Servizi</a>
-          <a href="#portfolio" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Casi Studio</a>
-          <a href="#chi-siamo" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Chi Siamo</a>
-          <a href="#contatti" className="btn-gold text-sm rounded-full px-5 py-2.5">Prenota Call</a>
+        {/* Desktop Nav - Pill style like edge.studio */}
+        <div className={`hidden md:flex items-center rounded-full border border-border/60 backdrop-blur-md transition-all duration-500 ${scrolled ? "bg-card/90 shadow-lg" : "bg-card/70"}`}>
+          <a href="#servizi" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Servizi
+          </a>
+          <span className="w-px h-5 bg-border" />
+          <a href="#portfolio" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Casi Studio
+          </a>
+          <span className="w-px h-5 bg-border" />
+          <a href="#chi-siamo" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Chi Siamo
+          </a>
+          <span className="w-px h-5 bg-border" />
+          <a
+            href="#contatti"
+            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 hover:scale-105 transition-transform duration-300"
+          >
+            Prenota Call
+            <ArrowDownRight size={16} />
+          </a>
         </div>
 
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        {/* Mobile toggle */}
+        <button className="md:hidden text-foreground z-10" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {open && (
-        <div className="md:hidden bg-background border-b border-border px-4 pb-4 space-y-3">
-          <a href="#servizi" className="block text-sm font-medium text-foreground" onClick={() => setOpen(false)}>Servizi</a>
-          <a href="#portfolio" className="block text-sm font-medium text-foreground" onClick={() => setOpen(false)}>Casi Studio</a>
-          <a href="#chi-siamo" className="block text-sm font-medium text-foreground" onClick={() => setOpen(false)}>Chi Siamo</a>
-          <a href="#contatti" className="btn-gold text-sm rounded-full inline-block" onClick={() => setOpen(false)}>Prenota Call</a>
-        </div>
-      )}
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden absolute top-full left-4 right-4 bg-card/95 backdrop-blur-xl rounded-3xl border border-border/60 shadow-2xl p-6 space-y-1"
+          >
+            {[
+              { href: "#servizi", label: "Servizi" },
+              { href: "#portfolio", label: "Casi Studio" },
+              { href: "#chi-siamo", label: "Chi Siamo" },
+            ].map((item, i) => (
+              <motion.a
+                key={item.href}
+                href={item.href}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05, duration: 0.3 }}
+                className="block text-lg font-medium text-foreground py-3 border-b border-border/40 last:border-0"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </motion.a>
+            ))}
+            <motion.a
+              href="#contatti"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="btn-gold text-sm inline-flex items-center gap-2 mt-4"
+              onClick={() => setOpen(false)}
+            >
+              Prenota Call <ArrowDownRight size={16} />
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

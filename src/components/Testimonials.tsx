@@ -1,6 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Star } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -25,30 +25,38 @@ const Testimonials = () => {
   const [current, setCurrent] = useState(0);
 
   return (
-    <section ref={ref} className="section-fade-in py-24 bg-muted">
+    <section ref={ref} className="section-fade-in py-32 bg-muted rounded-[3rem] mx-4 my-8">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-black text-foreground text-center mb-16">
-          Cosa dicono i nostri <span className="text-primary">clienti</span>
+        <p className="text-sm font-sans font-medium text-muted-foreground uppercase tracking-widest mb-4 text-center">Testimonianze</p>
+        <h2 className="text-4xl sm:text-5xl font-display text-foreground text-center mb-20">
+          Cosa dicono i nostri <span className="italic text-primary">clienti</span>
         </h2>
 
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="flex justify-center gap-1 mb-6">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={20} className="text-primary fill-primary" />
-            ))}
-          </div>
-          <blockquote className="text-xl sm:text-2xl font-medium text-foreground leading-relaxed mb-8 min-h-[80px]">
-            "{testimonials[current].quote}"
-          </blockquote>
-          <p className="font-bold text-foreground">{testimonials[current].name}</p>
-          <p className="text-muted-foreground text-sm">{testimonials[current].company}</p>
+        <div className="max-w-3xl mx-auto text-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-display italic text-foreground leading-snug mb-10">
+                "{testimonials[current].quote}"
+              </blockquote>
+              <p className="font-sans font-semibold text-foreground">{testimonials[current].name}</p>
+              <p className="text-muted-foreground text-sm font-sans">{testimonials[current].company}</p>
+            </motion.div>
+          </AnimatePresence>
 
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-3 mt-12">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-3 h-3 rounded-full transition-all ${i === current ? "bg-primary w-8" : "bg-border"}`}
+                className={`h-2 rounded-full transition-all duration-500 ${
+                  i === current ? "bg-primary w-12" : "bg-border w-8 hover:bg-muted-foreground/30"
+                }`}
               />
             ))}
           </div>
