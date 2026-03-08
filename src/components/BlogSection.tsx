@@ -67,9 +67,9 @@ const BlogSection = () => {
                   <span className="text-xs font-sans font-semibold text-primary uppercase tracking-wide">{article.category}</span>
                   <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock size={12} /> {article.readTime}</span>
                 </div>
-                <h3 className="text-base font-display text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
-                <p className="text-muted-foreground text-sm font-sans leading-relaxed line-clamp-2">{article.excerpt}</p>
-                <p className="text-xs text-muted-foreground mt-3 font-sans">{article.date}</p>
+                <h3 className="text-lg font-display text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
+                <p className="text-muted-foreground text-[15px] font-sans leading-relaxed line-clamp-2">{article.excerpt}</p>
+                <p className="text-sm text-muted-foreground mt-3 font-sans">{article.date}</p>
               </div>
             </article>
           ))}

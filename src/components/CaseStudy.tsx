@@ -42,13 +42,13 @@ const CaseStudy = () => {
                 results: ["+12M views", "+35K follower", "+200% ordini online"],
               },
             ].map((item) => (
-              <div key={item.title}>
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <div key={item.title} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4 mx-auto">
                   <item.icon size={22} className="text-primary" />
                 </div>
-                <h3 className="text-xl font-display text-secondary-foreground mb-3">{item.title}</h3>
+                <h3 className="text-2xl font-display text-secondary-foreground mb-3">{item.title}</h3>
                 {item.text && (
-                  <p className="text-secondary-foreground/70 text-sm font-sans leading-relaxed">{item.text}</p>
+                  <p className="text-secondary-foreground/70 text-base font-sans leading-relaxed">{item.text}</p>
                 )}
                 {item.results && (
                   <div className="space-y-2">
