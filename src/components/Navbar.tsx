@@ -27,7 +27,7 @@ const Navbar = () => {
 
         {/* Desktop Nav - Cream Floating Bar */}
         <div
-          className="hidden md:flex items-center rounded-full bg-background/80 backdrop-blur-xl border border-primary/15 shadow-[0_2px_20px_-4px_hsl(var(--gold)/0.12)] transition-all duration-500"
+          className="hidden md:flex items-center rounded-full bg-card backdrop-blur-xl border border-border/40 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] transition-all duration-500"
         >
           {["Servizi", "Casi Studio", "Chi Siamo", "Blog"].map((label, i) => (
             <span key={label} className="flex items-center">
