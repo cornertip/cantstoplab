@@ -1,24 +1,36 @@
-import { Video, Users, Sparkles } from "lucide-react";
+import { Video, Users, Sparkles, BarChart3, Megaphone, Palette } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
   {
     icon: Video,
-    number: "01",
     title: "Content Marketing",
     desc: "Strategia e produzione Reel/TikTok ad alte performance per far crescere il tuo brand.",
   },
   {
     icon: Users,
-    number: "02",
     title: "Influencer Marketing",
     desc: "Scouting e gestione creator per campagne autentiche che raggiungono il pubblico giusto.",
   },
   {
     icon: Sparkles,
-    number: "03",
     title: "Personal Branding",
     desc: "Costruiamo la tua identità digitale per renderti un punto di riferimento nel tuo settore.",
+  },
+  {
+    icon: Megaphone,
+    title: "Social Advertising",
+    desc: "Campagne paid su Meta e TikTok Ads ottimizzate per conversioni e ROI massimo.",
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics & Reporting",
+    desc: "Dashboard personalizzate e report mensili per monitorare le performance in tempo reale.",
+  },
+  {
+    icon: Palette,
+    title: "Creative Direction",
+    desc: "Concept visivi e art direction per contenuti che catturano l'attenzione e generano engagement.",
   },
 ];
 
@@ -35,18 +47,24 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => (
             <div
               key={s.title}
-              className="group py-12 md:px-8 border-b md:border-b-0 md:border-r last:border-r-0 border-border hover:bg-card/50 transition-colors duration-500"
+              className="group relative bg-card rounded-[10px] border border-border/60 p-8 cursor-pointer overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.03] hover:rotate-[0.5deg]"
             >
-              <div className="flex items-start justify-between mb-8">
+              <div className="mb-6">
                 <s.icon size={28} className="text-primary" />
-                <span className="text-xs font-sans font-medium text-muted-foreground">{s.number}</span>
               </div>
-              <h3 className="text-2xl font-display text-foreground mb-3">{s.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed font-sans">{s.desc}</p>
+              <h3 className="text-xl font-display text-foreground mb-3">{s.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed font-sans mb-8">{s.desc}</p>
+
+              {/* Hover button */}
+              <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
+                <span className="inline-flex items-center gap-2 text-sm font-sans font-semibold text-primary hover:underline">
+                  Scopri di più →
+                </span>
+              </div>
             </div>
           ))}
         </div>
