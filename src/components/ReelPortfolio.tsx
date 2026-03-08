@@ -2,17 +2,28 @@ import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useRef } from "react";
 
+import reelRistoranteLuce from "@/assets/reel-ristorante-luce.jpg";
+import reelFitpro from "@/assets/reel-fitpro.jpg";
+import reelMaisonBeaute from "@/assets/reel-maison-beaute.jpg";
+import reelTechstart from "@/assets/reel-techstart.jpg";
+import reelGustoItaliano from "@/assets/reel-gusto-italiano.jpg";
+import reelUrbanStyle from "@/assets/reel-urban-style.jpg";
+import reelBellaVitaSpa from "@/assets/reel-bella-vita-spa.jpg";
+import reelNovaDigital from "@/assets/reel-nova-digital.jpg";
+import reelCaffeRoma from "@/assets/reel-caffe-roma.jpg";
+import reelVerdeStudio from "@/assets/reel-verde-studio.jpg";
+
 const reels = [
-  { client: "Ristorante Luce", color: "from-rose-500 to-orange-400" },
-  { client: "FitPro Academy", color: "from-blue-500 to-cyan-400" },
-  { client: "Maison Beauté", color: "from-purple-500 to-pink-400" },
-  { client: "TechStart", color: "from-emerald-500 to-teal-400" },
-  { client: "Gusto Italiano", color: "from-amber-500 to-yellow-400" },
-  { client: "Urban Style", color: "from-indigo-500 to-violet-400" },
-  { client: "Bella Vita Spa", color: "from-pink-500 to-rose-400" },
-  { client: "Nova Digital", color: "from-sky-500 to-blue-400" },
-  { client: "Caffè Roma", color: "from-orange-500 to-amber-400" },
-  { client: "Verde Studio", color: "from-lime-500 to-emerald-400" },
+  { client: "Ristorante Luce", thumb: reelRistoranteLuce },
+  { client: "FitPro Academy", thumb: reelFitpro },
+  { client: "Maison Beauté", thumb: reelMaisonBeaute },
+  { client: "TechStart", thumb: reelTechstart },
+  { client: "Gusto Italiano", thumb: reelGustoItaliano },
+  { client: "Urban Style", thumb: reelUrbanStyle },
+  { client: "Bella Vita Spa", thumb: reelBellaVitaSpa },
+  { client: "Nova Digital", thumb: reelNovaDigital },
+  { client: "Caffè Roma", thumb: reelCaffeRoma },
+  { client: "Verde Studio", thumb: reelVerdeStudio },
 ];
 
 const ReelPortfolio = () => {
@@ -64,7 +75,12 @@ const ReelPortfolio = () => {
             key={r.client}
             className="flex-shrink-0 w-56 sm:w-64 aspect-[9/16] rounded-[2rem] overflow-hidden relative group cursor-pointer snap-center"
           >
-            <div className={`absolute inset-0 bg-gradient-to-br ${r.color}`} />
+            <img
+              src={r.thumb}
+              alt={r.client}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/40 transition-colors duration-500" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-popover gap-3">
               <div className="w-16 h-16 rounded-full bg-popover/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
