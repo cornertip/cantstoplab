@@ -85,14 +85,13 @@
 
     --border: 36 15% 85%;
     --input: 36 15% 85%;
-    --input-bg: 36 20% 92%;
+    --input-bg: 36 24% 90%;
     --ring: 43 90% 50%;
 
     --navy: 200 55% 18%;
     --navy-foreground: 36 33% 95%;
     --gold: 43 90% 50%;
     --cream: 36 33% 95%;
-    --font-sans: 'Halcom', system-ui, sans-serif;
   }
 }
 
@@ -106,11 +105,7 @@
   }
 
   .v2-theme body {
-    font-family: var(--font-sans, 'Work Sans', system-ui, sans-serif);
-  }
-
-  .v2-theme h1, .v2-theme h2, .v2-theme h3, .v2-theme h4, .v2-theme h5, .v2-theme h6 {
-    font-family: var(--font-sans, 'Work Sans', system-ui, sans-serif);
+    font-family: 'Halcom', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
