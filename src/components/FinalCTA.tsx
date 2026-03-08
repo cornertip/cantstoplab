@@ -78,7 +78,7 @@ const FinalCTA = () => {
             </div>
             <div className="space-y-2">
               <Label htmlFor="azienda" className="text-foreground font-sans text-sm">Azienda</Label>
-              <Input id="azienda" name="azienda" placeholder="Nome azienda" className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
+              <Input id="azienda" name="azienda" placeholder="Nome azienda" className="h-12 bg-[hsl(var(--input-bg))] border-border text-foreground placeholder:text-muted-foreground/40" />
             </div>
             <div className="space-y-2">
               <Label className="text-foreground font-sans text-sm">Budget totale</Label>
