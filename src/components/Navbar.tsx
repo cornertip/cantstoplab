@@ -17,9 +17,9 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container mx-auto px-4">
         {/* Single white pill containing logo + nav + CTA */}
-        <div className="hidden md:flex items-center justify-between rounded-full bg-card shadow-[0_2px_24px_-4px_rgba(0,0,0,0.1)] transition-all duration-500 pl-6 pr-1">
+        <div className="hidden md:flex items-center rounded-full bg-card shadow-[0_2px_24px_-4px_rgba(0,0,0,0.1)] transition-all duration-500 pl-6 pr-1 ml-auto">
           <a href="#" className="flex-shrink-0 mr-8">
-            <img src={cantstopLogo} alt="CantStopLab" className="h-6 object-contain" />
+            <img src={cantstopLogo} alt="CantStopLab" className="h-8 object-contain" />
           </a>
 
           <div className="flex items-center">
