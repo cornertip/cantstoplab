@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowDownRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import cantstopLogo from "@/assets/cantstop-logo.png";
+import logoFavicon from "@/assets/logo-favicon.jpg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -16,11 +18,17 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="text-xl font-sans font-black tracking-tight text-foreground z-10">
-          CantStop<span className="text-primary">Lab</span>
+        <a href="#" className="z-10">
+          {scrolled ? (
+            <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center shadow-md transition-all duration-300">
+              <img src={logoFavicon} alt="CantStopLab" className="w-7 h-7 rounded-full object-cover" />
+            </div>
+          ) : (
+            <img src={cantstopLogo} alt="CantStopLab" className="h-8 transition-all duration-300" />
+          )}
         </a>
 
-        {/* Desktop Nav - Pill style like edge.studio */}
+        {/* Desktop Nav */}
         <div className={`hidden md:flex items-center rounded-full border border-border/60 backdrop-blur-md transition-all duration-500 ${scrolled ? "bg-card/90 shadow-lg" : "bg-card/70"}`}>
           <a href="#servizi" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
             Servizi
@@ -32,6 +40,10 @@ const Navbar = () => {
           <span className="w-px h-5 bg-border" />
           <a href="#chi-siamo" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
             Chi Siamo
+          </a>
+          <span className="w-px h-5 bg-border" />
+          <a href="#blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+            Blog
           </a>
           <span className="w-px h-5 bg-border" />
           <a
@@ -63,6 +75,7 @@ const Navbar = () => {
               { href: "#servizi", label: "Servizi" },
               { href: "#portfolio", label: "Casi Studio" },
               { href: "#chi-siamo", label: "Chi Siamo" },
+              { href: "#blog", label: "Blog" },
             ].map((item, i) => (
               <motion.a
                 key={item.href}

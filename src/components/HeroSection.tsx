@@ -1,43 +1,92 @@
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDownRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
+
+const stats = [
+  { number: "100+", label: "Brand Gestiti" },
+  { number: "50M+", label: "View Generate" },
+  { number: "5000+", label: "Reel Prodotti" },
+];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl sm:text-7xl lg:text-[8rem] font-display leading-[0.95] tracking-tight text-foreground mb-8"
-          >
-            Short Video
-            <br />
-            <span className="italic text-primary">Strategy</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-12 font-sans"
-          >
-            Trasformiamo la passione in performance attraverso strategie in formato short per brand che emozionano.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <a
-              href="#contatti"
-              className="btn-gold text-base inline-flex items-center gap-3 px-10 py-5 text-lg group"
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+      <div className="container mx-auto px-4 relative z-10 pt-28 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Text */}
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className="text-4xl sm:text-6xl lg:text-7xl font-display leading-[0.95] tracking-tight text-foreground mb-6"
             >
-              Inizia ora
-              <ArrowDownRight size={20} className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
-            </a>
+              Short Video
+              <br />
+              <span className="italic text-primary">Strategy</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="text-base sm:text-lg text-muted-foreground max-w-md mb-8 font-sans"
+            >
+              Trasformiamo la passione in performance attraverso strategie in formato short per brand che emozionano.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="mb-10"
+            >
+              <a
+                href="#contatti"
+                className="btn-gold text-base inline-flex items-center gap-3 px-10 py-4 text-lg group"
+              >
+                Inizia ora
+                <ArrowDownRight size={20} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
+              </a>
+            </motion.div>
+
+            {/* Stats - small, under CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="flex gap-8"
+            >
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <p className="text-2xl font-display italic text-foreground">{s.number}</p>
+                  <p className="text-xs font-sans font-medium text-muted-foreground uppercase tracking-wider">{s.label}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right - Video Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            <div className="aspect-[4/3] rounded-[2rem] bg-secondary overflow-hidden relative group cursor-pointer">
+              {/* Video placeholder */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                  <Play size={32} className="text-primary-foreground ml-1" fill="currentColor" />
+                </div>
+                <p className="text-secondary-foreground/70 font-sans text-sm">Guarda il nostro showreel</p>
+              </div>
+              {/* Decorative dots */}
+              <div className="absolute top-6 right-6 flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-primary" />
+                <div className="w-3 h-3 rounded-full bg-secondary-foreground/30" />
+                <div className="w-3 h-3 rounded-full bg-secondary-foreground/20" />
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
