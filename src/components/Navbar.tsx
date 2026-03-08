@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowDownRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import cantstopLogo from "@/assets/cantstop-logo.png";
-import logoFavicon from "@/assets/logo-favicon.jpg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -17,11 +16,11 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - always cantstop-logo.png */}
         <a href="#" className="z-10">
           {scrolled ? (
-            <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center shadow-md transition-all duration-300">
-              <img src={logoFavicon} alt="CantStopLab" className="w-7 h-7 rounded-full object-cover" />
+            <div className="h-10 rounded-full bg-card flex items-center justify-center shadow-md transition-all duration-300 px-3">
+              <img src={cantstopLogo} alt="CantStopLab" className="h-6 object-contain" />
             </div>
           ) : (
             <img src={cantstopLogo} alt="CantStopLab" className="h-8 transition-all duration-300" />
@@ -48,10 +47,10 @@ const Navbar = () => {
           <span className="w-px h-5 bg-border" />
           <a
             href="#contatti"
-            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 hover:scale-105 transition-transform duration-300"
+            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 transition-colors duration-300 group"
           >
-            Prenota Call
-            <ArrowDownRight size={16} />
+            Contatti
+            <ArrowDownRight size={16} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
           </a>
         </div>
 
@@ -94,10 +93,10 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="btn-gold text-sm inline-flex items-center gap-2 mt-4"
+              className="btn-gold text-sm inline-flex items-center gap-2 mt-4 group"
               onClick={() => setOpen(false)}
             >
-              Prenota Call <ArrowDownRight size={16} />
+              Contatti <ArrowDownRight size={16} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
             </motion.a>
           </motion.div>
         )}

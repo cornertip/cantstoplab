@@ -1,4 +1,4 @@
-import { Video, Users, Sparkles, BarChart3, Megaphone, Palette } from "lucide-react";
+import { Video, Users, Sparkles, BarChart3, Megaphone, Palette, ArrowDownRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
@@ -56,14 +56,18 @@ const ServicesSection = () => {
               <div className="mb-6">
                 <s.icon size={28} className="text-primary" />
               </div>
-              <h3 className="text-xl font-display text-foreground mb-3">{s.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed font-sans mb-8">{s.desc}</p>
+              <h3 className="text-2xl font-display text-foreground mb-3">{s.title}</h3>
+              <p className="text-muted-foreground text-base leading-relaxed font-sans mb-8">{s.desc}</p>
 
-              {/* Hover button */}
+              {/* Hover button - same style as "Inizia ora" */}
               <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
-                <span className="inline-flex items-center gap-2 text-sm font-sans font-semibold text-primary hover:underline">
-                  Scopri di più →
-                </span>
+                <a
+                  href="#contatti"
+                  className="btn-gold text-sm inline-flex items-center gap-2 px-6 py-3 group/btn"
+                >
+                  Scopri di più
+                  <ArrowDownRight size={16} className="group-hover/btn:rotate-[-45deg] transition-transform duration-300" />
+                </a>
               </div>
             </div>
           ))}
