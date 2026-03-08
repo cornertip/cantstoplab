@@ -1,8 +1,9 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const founders = [
-  { name: "Marco Rossi", role: "CEO & Strategist", initials: "MR" },
-  { name: "Sara Bianchi", role: "Creative Director", initials: "SB" },
+  { name: "Gelsomina Tagliamonte", role: "Founder & Key Account Manager", initials: "GT" },
+  { name: "Carla Panico", role: "Founder & Digital Marketing Manager", initials: "CP" },
+  { name: "Vincenzo Basile", role: "Visual Art Design", initials: "VB" },
 ];
 
 const FounderSection = () => {
@@ -22,14 +23,15 @@ const FounderSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
             {founders.map((f) => (
               <div key={f.name} className="text-center group">
-                <div className="w-36 h-36 rounded-full bg-secondary flex items-center justify-center mx-auto mb-5 text-3xl font-display italic text-secondary-foreground group-hover:ring-4 ring-primary ring-offset-4 ring-offset-background transition-all duration-500">
-                  {f.initials}
+                <div className="w-32 h-32 rounded-full bg-secondary flex items-center justify-center mx-auto mb-5 text-2xl font-display italic text-secondary-foreground group-hover:ring-4 ring-primary ring-offset-4 ring-offset-background transition-all duration-500 overflow-hidden">
+                  {/* Placeholder — sostituisci con foto reale */}
+                  <span>{f.initials}</span>
                 </div>
-                <h3 className="text-lg font-display text-foreground">{f.name}</h3>
-                <p className="text-muted-foreground text-sm font-sans">{f.role}</p>
+                <h3 className="text-base font-display text-foreground">{f.name}</h3>
+                <p className="text-muted-foreground text-xs font-sans mt-1">{f.role}</p>
               </div>
             ))}
           </div>
