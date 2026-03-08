@@ -83,7 +83,7 @@ const FinalCTA = () => {
             <div className="space-y-2">
               <Label className="text-foreground font-sans text-sm">Budget totale</Label>
               <Select name="budget">
-                <SelectTrigger className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground">
+                <SelectTrigger className="h-12 bg-[hsl(var(--input-bg))] border-border text-foreground">
                   <SelectValue placeholder="Seleziona budget" />
                 </SelectTrigger>
                 <SelectContent>
