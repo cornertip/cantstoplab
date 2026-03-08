@@ -24,6 +24,27 @@ const articles = [
     date: "2 Gen 2025",
     readTime: "6 min",
   },
+  {
+    title: "Personal Branding: costruire un'identità digitale forte",
+    excerpt: "Come posizionarti come leader di pensiero nel tuo settore attraverso i contenuti video.",
+    category: "Personal Branding",
+    date: "28 Dic 2024",
+    readTime: "4 min",
+  },
+  {
+    title: "L'algoritmo di Instagram nel 2025: cosa è cambiato",
+    excerpt: "Tutte le novità dell'algoritmo e come sfruttarle per massimizzare la reach organica.",
+    category: "Social Media",
+    date: "20 Dic 2024",
+    readTime: "8 min",
+  },
+  {
+    title: "UGC e brand: il potere dei contenuti generati dagli utenti",
+    excerpt: "Perché i contenuti autentici creati dai tuoi clienti valgono più di qualsiasi campagna pubblicitaria.",
+    category: "UGC Strategy",
+    date: "15 Dic 2024",
+    readTime: "5 min",
+  },
 ];
 
 const BlogSection = () => {
@@ -56,7 +77,6 @@ const BlogSection = () => {
               Le ultime dal <span className="italic text-primary">mondo short</span>
             </h2>
           </div>
-          {/* Arrows top-right */}
           <div className="hidden sm:flex gap-3">
             <button
               onClick={() => scroll("left")}
@@ -83,24 +103,23 @@ const BlogSection = () => {
           {articles.map((article) => (
             <article
               key={article.title}
-              className="flex-shrink-0 w-[340px] sm:w-[380px] bg-card rounded-[10px] border border-border/60 overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-500 snap-start"
+              className="flex-shrink-0 w-[280px] sm:w-[320px] bg-card rounded-[10px] border border-border/60 overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-500 snap-start"
             >
-              {/* Image placeholder */}
               <div className="aspect-[16/10] bg-muted flex items-center justify-center">
                 <ImageIcon size={32} className="text-muted-foreground/30" />
               </div>
-              <div className="p-6">
+              <div className="p-5">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-xs font-sans font-semibold text-primary uppercase tracking-wide">{article.category}</span>
                   <span className="text-xs text-muted-foreground flex items-center gap-1">
                     <Clock size={12} /> {article.readTime}
                   </span>
                 </div>
-                <h3 className="text-lg font-display text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-base font-display text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-300">
                   {article.title}
                 </h3>
                 <p className="text-muted-foreground text-sm font-sans leading-relaxed line-clamp-2">{article.excerpt}</p>
-                <p className="text-xs text-muted-foreground mt-4 font-sans">{article.date}</p>
+                <p className="text-xs text-muted-foreground mt-3 font-sans">{article.date}</p>
               </div>
             </article>
           ))}

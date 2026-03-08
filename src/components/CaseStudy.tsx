@@ -1,14 +1,20 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { TrendingUp, Target, Zap, ImageIcon } from "lucide-react";
+import { TrendingUp, Target, Zap } from "lucide-react";
+import foodBg from "@/assets/food-case-study-bg.jpg";
 
 const CaseStudy = () => {
   const ref = useScrollReveal();
 
   return (
     <section ref={ref} className="section-fade-in bg-secondary py-32 relative overflow-hidden rounded-[3rem] mx-4 my-8">
-      <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full border border-secondary-foreground/10" />
+      {/* Food background image with low opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: `url(${foodBg})` }}
+      />
+      <div className="absolute inset-0 bg-secondary/60" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <p className="text-primary font-sans font-medium text-sm uppercase tracking-widest mb-6">Caso Studio</p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-secondary-foreground mb-20 leading-[1.05]">
@@ -35,11 +41,6 @@ const CaseStudy = () => {
               },
             ].map((item) => (
               <div key={item.title}>
-                {/* Image placeholder */}
-                <div className="aspect-[4/3] rounded-2xl bg-secondary-foreground/10 mb-6 flex items-center justify-center">
-                  <ImageIcon size={32} className="text-secondary-foreground/30" />
-                </div>
-
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
                   <item.icon size={22} className="text-primary" />
                 </div>
