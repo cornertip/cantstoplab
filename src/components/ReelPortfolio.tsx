@@ -1,4 +1,4 @@
-import { Play } from "lucide-react";
+import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useRef } from "react";
 
@@ -9,11 +9,24 @@ const reels = [
   { client: "TechStart", color: "from-emerald-500 to-teal-400" },
   { client: "Gusto Italiano", color: "from-amber-500 to-yellow-400" },
   { client: "Urban Style", color: "from-indigo-500 to-violet-400" },
+  { client: "Bella Vita Spa", color: "from-pink-500 to-rose-400" },
+  { client: "Nova Digital", color: "from-sky-500 to-blue-400" },
+  { client: "Caffè Roma", color: "from-orange-500 to-amber-400" },
+  { client: "Verde Studio", color: "from-lime-500 to-emerald-400" },
 ];
 
 const ReelPortfolio = () => {
   const ref = useScrollReveal();
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const amount = 280;
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section id="portfolio" ref={ref} className="section-fade-in py-32 bg-background">
@@ -25,9 +38,20 @@ const ReelPortfolio = () => {
               I nostri <span className="italic text-primary">lavori</span>
             </h2>
           </div>
-          <p className="text-muted-foreground text-sm font-sans max-w-sm">
-            Swipe per scoprire i nostri migliori progetti in formato verticale.
-          </p>
+          <div className="flex gap-3">
+            <button
+              onClick={() => scroll("left")}
+              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
       </div>
 
