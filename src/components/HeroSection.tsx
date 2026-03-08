@@ -1,13 +1,13 @@
+import { useState, useRef } from "react";
 import { ArrowDownRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
+import teamThumb from "@/assets/cantstoplab-team.png";
 
 const stats = [
   { number: "100+", label: "Brand Gestiti" },
   { number: "50M+", label: "View Generate" },
   { number: "5000+", label: "Reel Prodotti" },
 ];
-
-const INSTAGRAM_URL = "https://www.instagram.com/stories/highlights/18012809396610882/";
 
 const HeroSection = () => {
   return (
