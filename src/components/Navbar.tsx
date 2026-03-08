@@ -20,8 +20,8 @@ const Navbar = () => {
         {/* Logo - swap to favicon on sticky */}
         <a href="#" className="z-10">
           {scrolled ? (
-            <div className="h-10 rounded-full bg-card/90 backdrop-blur-md flex items-center justify-center shadow-md transition-all duration-300 px-3 border border-border/60">
-              <img src={logoFavicon} alt="CantStopLab" className="h-6 object-contain rounded-sm" />
+            <div className="h-12 w-12 rounded-full bg-card/90 backdrop-blur-md flex items-center justify-center shadow-md transition-all duration-300 border border-border/60 overflow-hidden">
+              <img src={logoFavicon} alt="CantStopLab" className="h-12 w-12 object-cover rounded-full" />
             </div>
           ) : (
             <img src={cantstopLogo} alt="CantStopLab" className="h-8 transition-all duration-300" />
