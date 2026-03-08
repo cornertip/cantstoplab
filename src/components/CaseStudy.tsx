@@ -10,11 +10,39 @@ const CaseStudy = () => {
       <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full border border-secondary-foreground/10" />
 
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <p className="text-primary font-sans font-medium text-sm uppercase tracking-widest mb-6">Caso Studio</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-secondary-foreground mb-20 leading-[1.05]">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-secondary-foreground mb-16 leading-[1.05]">
             Come abbiamo rivoluzionato il digital di un brand <span className="italic text-primary">Food</span>
           </h2>
+
+          {/* Image gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-20">
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/case-study-food-1.jpg"
+                alt="Pasta italiana - caso studio food"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/case-study-food-2.jpg"
+                alt="Pizza artigianale - caso studio food"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3] col-span-2 md:col-span-1">
+              <img
+                src="/images/case-study-food-3.jpg"
+                alt="Tiramisù - caso studio food"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[

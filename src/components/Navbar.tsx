@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowDownRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -16,11 +16,11 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="text-xl font-sans font-black tracking-tight text-foreground z-10">
+        <a href="#" className={`text-xl font-sans font-black tracking-tight z-10 transition-colors duration-500 ${scrolled ? "text-foreground" : "text-secondary-foreground"}`}>
           CantStop<span className="text-primary">Lab</span>
         </a>
 
-        {/* Desktop Nav - Pill style like edge.studio */}
+        {/* Desktop Nav */}
         <div className={`hidden md:flex items-center rounded-full border border-border/60 backdrop-blur-md transition-all duration-500 ${scrolled ? "bg-card/90 shadow-lg" : "bg-card/70"}`}>
           <a href="#servizi" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
             Servizi
@@ -36,15 +36,15 @@ const Navbar = () => {
           <span className="w-px h-5 bg-border" />
           <a
             href="#contatti"
-            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 hover:scale-105 transition-transform duration-300"
+            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 transition-all duration-300 group"
           >
             Prenota Call
-            <ArrowDownRight size={16} />
+            <ArrowRight size={16} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
           </a>
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground z-10" onClick={() => setOpen(!open)}>
+        <button className={`md:hidden z-10 transition-colors ${scrolled ? "text-foreground" : "text-secondary-foreground"}`} onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -81,10 +81,10 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="btn-gold text-sm inline-flex items-center gap-2 mt-4"
+              className="btn-gold text-sm inline-flex items-center gap-2 mt-4 group"
               onClick={() => setOpen(false)}
             >
-              Prenota Call <ArrowDownRight size={16} />
+              Prenota Call <ArrowRight size={16} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
             </motion.a>
           </motion.div>
         )}
