@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Work Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"Halcom"', 'system-ui', 'sans-serif'],
         display: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       colors: {
