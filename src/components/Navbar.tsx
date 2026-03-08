@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowDownRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import cantstopLogo from "@/assets/cantstop-logo.png";
+import logoFavicon from "@/assets/logo-favicon.jpg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -16,11 +17,11 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo - always cantstop-logo.png */}
+        {/* Logo - swap to favicon on sticky */}
         <a href="#" className="z-10">
           {scrolled ? (
-            <div className="h-10 rounded-full bg-card flex items-center justify-center shadow-md transition-all duration-300 px-3">
-              <img src={cantstopLogo} alt="CantStopLab" className="h-6 object-contain" />
+            <div className="h-10 rounded-full bg-card/90 backdrop-blur-md flex items-center justify-center shadow-md transition-all duration-300 px-3 border border-border/60">
+              <img src={logoFavicon} alt="CantStopLab" className="h-6 object-contain rounded-sm" />
             </div>
           ) : (
             <img src={cantstopLogo} alt="CantStopLab" className="h-8 transition-all duration-300" />

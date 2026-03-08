@@ -18,8 +18,8 @@ const FinalCTA = () => {
           href="#"
           className="btn-gold text-lg inline-flex items-center gap-3 px-12 py-5 group"
         >
-          Prenota la tua Call
-          <ArrowDownRight size={20} className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+          Contattaci
+          <ArrowDownRight size={20} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
         </a>
       </div>
     </section>
