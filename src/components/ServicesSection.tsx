@@ -43,7 +43,7 @@ const ServicesSection = () => {
         <div className="max-w-xl mb-20">
           <p className="text-sm font-sans font-medium text-muted-foreground uppercase tracking-widest mb-4">Servizi</p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-foreground leading-[1.05]">
-            Tutto quello che serve per <span className="italic text-primary">dominare i social.</span>
+            Tutto quello che serve per <span className="italic text-primary">dominare i social</span><span className="text-foreground">.</span>
           </h2>
         </div>
 
