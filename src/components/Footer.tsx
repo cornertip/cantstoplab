@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground py-20 rounded-t-[3rem]">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center sm:text-left">
           <div>
             <img src={logoY} alt="CantStopLab" className="h-8 mb-4" />
             <p className="text-secondary-foreground/60 text-sm font-sans leading-relaxed">
@@ -25,7 +25,7 @@ const Footer = () => {
 
           <div>
             <h4 className="font-sans font-semibold text-sm mb-5 uppercase tracking-widest text-secondary-foreground/50">Social</h4>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center sm:justify-start">
               <a href="#" className="w-11 h-11 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                 <Instagram size={18} />
               </a>
