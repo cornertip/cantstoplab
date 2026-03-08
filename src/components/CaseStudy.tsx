@@ -16,8 +16,10 @@ const CaseStudy = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <p className="text-primary font-sans font-medium text-sm uppercase tracking-widest mb-6">Caso Studio</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-secondary-foreground mb-20 leading-[1.05]">
+          <div className="flex justify-center mb-6">
+            <span className="bg-primary text-primary-foreground font-sans font-medium text-sm uppercase tracking-widest px-5 py-2 rounded-full">Caso Studio</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-secondary-foreground mb-20 leading-[1.05] text-center">
             Come abbiamo rivoluzionato il digital di un brand <span className="italic text-primary">Food</span>
           </h2>
 
@@ -40,13 +42,13 @@ const CaseStudy = () => {
                 results: ["+12M views", "+35K follower", "+200% ordini online"],
               },
             ].map((item) => (
-              <div key={item.title}>
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <div key={item.title} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4 mx-auto">
                   <item.icon size={22} className="text-primary" />
                 </div>
-                <h3 className="text-xl font-display text-secondary-foreground mb-3">{item.title}</h3>
+                <h3 className="text-2xl font-display text-secondary-foreground mb-3">{item.title}</h3>
                 {item.text && (
-                  <p className="text-secondary-foreground/70 text-sm font-sans leading-relaxed">{item.text}</p>
+                  <p className="text-secondary-foreground/70 text-base font-sans leading-relaxed">{item.text}</p>
                 )}
                 {item.results && (
                   <div className="space-y-2">
