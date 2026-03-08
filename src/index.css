@@ -50,6 +50,40 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* Versione 2 — warm cream palette inspired by cantstoplab.consulentesem.com */
+  .v2-theme {
+    --background: 36 33% 95%;
+    --foreground: 200 50% 15%;
+
+    --card: 36 30% 92%;
+    --card-foreground: 200 50% 15%;
+
+    --popover: 36 33% 95%;
+    --popover-foreground: 200 50% 15%;
+
+    --primary: 43 90% 50%;
+    --primary-foreground: 200 50% 15%;
+
+    --secondary: 200 55% 18%;
+    --secondary-foreground: 36 33% 95%;
+
+    --muted: 36 20% 90%;
+    --muted-foreground: 200 25% 40%;
+
+    --accent: 43 90% 50%;
+    --accent-foreground: 200 50% 15%;
+
+    --border: 36 15% 85%;
+    --input: 36 15% 85%;
+    --input-bg: 36 20% 92%;
+    --ring: 43 90% 50%;
+
+    --navy: 200 55% 18%;
+    --navy-foreground: 36 33% 95%;
+    --gold: 43 90% 50%;
+    --cream: 36 33% 95%;
+  }
 }
 
 @layer base {
