@@ -56,7 +56,7 @@ const ServicesSection = () => {
               <div className="mb-6">
                 <s.icon size={28} className="text-primary" />
               </div>
-              <h3 className="text-2xl font-display text-foreground mb-3">{s.title}</h3>
+              <h3 className="text-2xl font-display text-foreground mb-3 transition-all duration-300 group-hover:text-3xl group-hover:font-bold">{s.title}</h3>
               <p className="text-muted-foreground text-base leading-relaxed font-sans mb-8">{s.desc}</p>
 
               {/* Hover button - same style as "Inizia ora" */}
