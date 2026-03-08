@@ -33,7 +33,7 @@ const ReelPortfolio = () => {
 
       <div
         ref={scrollRef}
-        className="flex gap-5 overflow-x-auto scrollbar-hide px-4 md:px-[calc(50vw-600px)] pb-4 snap-x snap-mandatory"
+        className="flex gap-5 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory container mx-auto px-4"
       >
         {reels.map((r) => (
           <div
