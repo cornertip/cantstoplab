@@ -1,5 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { TrendingUp, Target, Zap } from "lucide-react";
+import { TrendingUp, Target, Zap, ArrowDownRight } from "lucide-react";
 import foodBg from "@/assets/food-case-study-bg.jpg";
 
 const CaseStudy = () => {
@@ -57,6 +57,16 @@ const CaseStudy = () => {
                 )}
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="#"
+              className="btn-gold text-base inline-flex items-center gap-3 px-10 py-4 group"
+            >
+              Vai al caso studio
+              <ArrowDownRight size={18} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
+            </a>
           </div>
         </div>
       </div>
