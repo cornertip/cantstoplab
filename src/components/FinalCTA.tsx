@@ -74,7 +74,7 @@ const FinalCTA = () => {
             </div>
             <div className="space-y-2">
               <Label htmlFor="telefono" className="text-foreground font-sans text-sm">Telefono</Label>
-              <Input id="telefono" name="telefono" type="tel" placeholder="Numero di telefono" className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
+              <Input id="telefono" name="telefono" type="tel" placeholder="Numero di telefono" className="h-12 bg-[hsl(var(--input-bg))] border-border text-foreground placeholder:text-muted-foreground/40" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="azienda" className="text-foreground font-sans text-sm">Azienda</Label>
