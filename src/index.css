@@ -104,9 +104,6 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  .v2-theme body {
-    font-family: 'Halcom', system-ui, sans-serif;
-  }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
@@ -171,4 +168,18 @@
     border-radius: 0 0 50% 50% / 0 0 100% 100%;
     z-index: 1;
   }
+}
+
+/* V2 theme: Halcom replaces Work Sans (outside @layer for higher specificity) */
+.v2-theme body,
+.v2-theme .font-sans,
+.v2-theme p,
+.v2-theme span,
+.v2-theme a,
+.v2-theme label,
+.v2-theme input,
+.v2-theme select,
+.v2-theme textarea,
+.v2-theme button {
+  font-family: 'Halcom', system-ui, sans-serif;
 }
