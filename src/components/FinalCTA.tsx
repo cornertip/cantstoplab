@@ -62,28 +62,28 @@ const FinalCTA = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             <div className="space-y-2">
               <Label htmlFor="nome" className="text-foreground font-sans text-sm">Nome</Label>
-              <Input id="nome" name="nome" placeholder="Nome" required className="bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
+              <Input id="nome" name="nome" placeholder="Nome" required className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="cognome" className="text-foreground font-sans text-sm">Cognome</Label>
-              <Input id="cognome" name="cognome" placeholder="Cognome" required className="bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
+              <Input id="cognome" name="cognome" placeholder="Cognome" required className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email" className="text-foreground font-sans text-sm">Email</Label>
-              <Input id="email" name="email" type="email" placeholder="email@esempio.com" required className="bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
+              <Input id="email" name="email" type="email" placeholder="email@esempio.com" required className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="telefono" className="text-foreground font-sans text-sm">Telefono</Label>
-              <Input id="telefono" name="telefono" type="tel" placeholder="Numero di telefono" className="bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
+              <Input id="telefono" name="telefono" type="tel" placeholder="Numero di telefono" className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="azienda" className="text-foreground font-sans text-sm">Azienda</Label>
-              <Input id="azienda" name="azienda" placeholder="Nome azienda" className="bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
+              <Input id="azienda" name="azienda" placeholder="Nome azienda" className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground placeholder:text-muted-foreground/40" />
             </div>
             <div className="space-y-2">
               <Label className="text-foreground font-sans text-sm">Budget totale</Label>
               <Select name="budget">
-                <SelectTrigger className="bg-[hsl(210,12%,95%)] border-border text-foreground">
+                <SelectTrigger className="h-12 bg-[hsl(210,12%,95%)] border-border text-foreground">
                   <SelectValue placeholder="Seleziona budget" />
                 </SelectTrigger>
                 <SelectContent>
