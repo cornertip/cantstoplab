@@ -99,7 +99,7 @@ const HeroSection = () => {
               <img
                 src={teamThumb}
                 alt="Scopri CantStopLab"
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${playing ? 'opacity-0' : 'opacity-100'}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${playing ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
               />
               {/* Play button overlay */}
               {!playing && (
