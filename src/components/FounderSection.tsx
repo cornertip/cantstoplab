@@ -32,7 +32,7 @@ const FounderSection = () => {
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4 group-hover:ring-4 ring-primary ring-offset-4 ring-offset-background transition-all duration-500 overflow-hidden">
                   <img src={f.photo} alt={f.name} className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-display text-foreground leading-tight">{f.name.split(" ")[0]}<br/>{f.name.split(" ").slice(1).join(" ")}</h3>
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground leading-tight">{f.name.split(" ")[0]}<br/>{f.name.split(" ").slice(1).join(" ")}</h3>
                 <p className="text-muted-foreground text-sm font-sans mt-1">{f.role}</p>
               </div>
             ))}
