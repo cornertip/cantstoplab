@@ -12,7 +12,7 @@ const FinalCTA = () => {
           <span className="italic text-primary">memorabile</span>?
         </h2>
         <p className="text-muted-foreground text-lg font-sans mb-12 max-w-lg mx-auto">
-          Prenota una call gratuita e scopri come possiamo far crescere il tuo brand con i vertical video.
+          Affidati alla nostra Social Media Marketing Agency: prenota una call gratuita e scopri come possiamo far crescere il tuo brand con strategie digitali e vertical video.
         </p>
         <a
           href="#"
