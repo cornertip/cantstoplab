@@ -14,7 +14,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled ? "py-3" : "py-5"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="z-10">
@@ -25,23 +25,13 @@ const Navbar = () => {
           />
         </a>
 
-        {/* Desktop Nav - Ghost Pill */}
+        {/* Desktop Nav - Cream Floating Bar */}
         <div
-          className={`hidden md:flex items-center rounded-full transition-all duration-700 ${
-            scrolled
-              ? "bg-card/90 backdrop-blur-xl shadow-[0_4px_30px_-5px_hsl(var(--gold)/0.15)] border border-primary/20"
-              : "bg-transparent border border-transparent"
-          }`}
+          className="hidden md:flex items-center rounded-full bg-background/80 backdrop-blur-xl border border-primary/15 shadow-[0_2px_20px_-4px_hsl(var(--gold)/0.12)] transition-all duration-500"
         >
           {["Servizi", "Casi Studio", "Chi Siamo", "Blog"].map((label, i) => (
             <span key={label} className="flex items-center">
-              {i > 0 && (
-                <span
-                  className={`w-px h-4 transition-all duration-700 ${
-                    scrolled ? "bg-border" : "bg-foreground/15"
-                  }`}
-                />
-              )}
+              {i > 0 && <span className="w-px h-4 bg-primary/15" />}
               <a
                 href={`#${label === "Casi Studio" ? "portfolio" : label === "Chi Siamo" ? "chi-siamo" : label.toLowerCase()}`}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3"
@@ -52,11 +42,7 @@ const Navbar = () => {
           ))}
           <a
             href="#contatti"
-            className={`flex items-center gap-2 font-semibold text-sm rounded-full px-6 py-3 transition-all duration-500 group ${
-              scrolled
-                ? "bg-primary text-primary-foreground m-1"
-                : "bg-primary/90 text-primary-foreground m-1"
-            }`}
+            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 transition-colors duration-300 group"
           >
             Contatti
             <ArrowDownRight size={16} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
@@ -77,7 +63,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden absolute top-full left-4 right-4 bg-card/95 backdrop-blur-xl rounded-3xl border border-primary/15 shadow-2xl p-6 space-y-1"
+            className="md:hidden absolute top-full left-4 right-4 bg-background/95 backdrop-blur-xl rounded-3xl border border-primary/15 shadow-2xl p-6 space-y-1"
           >
             {[
               { href: "#servizi", label: "Servizi" },
