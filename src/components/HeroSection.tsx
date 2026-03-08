@@ -13,8 +13,8 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
       <div className="container mx-auto px-4 relative z-10 pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Text */}
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 items-center">
+          {/* Left - Text (60%) */}
           <div>
             <motion.h1
               initial={{ opacity: 0, y: 60 }}
@@ -22,9 +22,9 @@ const HeroSection = () => {
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl sm:text-6xl lg:text-7xl font-display leading-[0.95] tracking-tight text-foreground mb-6"
             >
-              Short Video
+              Il Tuo Brand Merita
               <br />
-              <span className="italic text-primary">Strategy</span>
+              <span className="italic text-primary">Contenuti che Esplodono</span>
             </motion.h1>
 
             <motion.p
