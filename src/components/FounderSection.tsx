@@ -1,10 +1,12 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { UserCircle } from "lucide-react";
+import gelsoImg from "@/assets/gelsomina.jpg";
+import carlaImg from "@/assets/carla.jpg";
+import vincenzoImg from "@/assets/vincenzo.jpg";
 
 const founders = [
-  { name: "Gelsomina Tagliamonte", role: "Founder e Key Account Manager", initials: "GT" },
-  { name: "Carla Panico", role: "Founder e Digital Marketing Manager", initials: "CP" },
-  { name: "Vincenzo Basile", role: "Visual Art Design", initials: "VB" },
+  { name: "Gelsomina Tagliamonte", role: "Founder e Key Account Manager", photo: gelsoImg },
+  { name: "Carla Panico", role: "Founder e Digital Marketing Manager", photo: carlaImg },
+  { name: "Vincenzo Basile", role: "Visual Art Design", photo: vincenzoImg },
 ];
 
 const FounderSection = () => {
@@ -27,9 +29,8 @@ const FounderSection = () => {
           <div className="grid grid-cols-3 gap-6">
             {founders.map((f) => (
               <div key={f.name} className="text-center group">
-                {/* Photo placeholder */}
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4 group-hover:ring-4 ring-primary ring-offset-4 ring-offset-background transition-all duration-500 overflow-hidden">
-                  <UserCircle size={48} className="text-secondary-foreground/40" />
+                  <img src={f.photo} alt={f.name} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-sm sm:text-base font-display text-foreground leading-tight">{f.name}</h3>
                 <p className="text-muted-foreground text-xs font-sans mt-1">{f.role}</p>

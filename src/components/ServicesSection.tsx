@@ -51,7 +51,7 @@ const ServicesSection = () => {
           {services.map((s) => (
             <div
               key={s.title}
-              className="group relative bg-card rounded-[10px] border border-border/60 p-8 cursor-pointer overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.03] hover:rotate-[0.5deg]"
+              className="group relative bg-card rounded-[10px] border border-border/60 p-8 cursor-pointer overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.05] hover:rotate-[2deg]"
             >
               <div className="mb-6">
                 <s.icon size={28} className="text-primary" />

@@ -1,4 +1,5 @@
 import { Instagram, Linkedin } from "lucide-react";
+import logoY from "@/assets/cantstop-logo-y.png";
 
 const Footer = () => {
   return (
@@ -6,9 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <p className="font-sans font-black text-lg mb-3">
-              CantStop<span className="text-primary">Lab</span>
-            </p>
+            <img src={logoY} alt="CantStopLab" className="h-8 mb-4" />
             <p className="text-secondary-foreground/60 text-sm font-sans leading-relaxed">
               Agenzia creativa specializzata in Short Video per brand ambiziosi.
             </p>

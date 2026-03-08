@@ -7,6 +7,8 @@ const stats = [
   { number: "5000+", label: "Reel Prodotti" },
 ];
 
+const INSTAGRAM_URL = "https://www.instagram.com/stories/highlights/18012809396610882/";
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
@@ -65,28 +67,33 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Right - Video Placeholder */}
+          {/* Right - Vertical Video Placeholder */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
+            className="flex justify-center"
           >
-            <div className="aspect-[4/3] rounded-[2rem] bg-secondary overflow-hidden relative group cursor-pointer">
-              {/* Video placeholder */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="aspect-[9/16] w-[280px] sm:w-[320px] rounded-[2rem] bg-secondary overflow-hidden relative group cursor-pointer block"
+            >
+              {/* Play button overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
                 <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
                   <Play size={32} className="text-primary-foreground ml-1" fill="currentColor" />
                 </div>
                 <p className="text-secondary-foreground/70 font-sans text-sm">Guarda il nostro showreel</p>
               </div>
               {/* Decorative dots */}
-              <div className="absolute top-6 right-6 flex gap-2">
+              <div className="absolute top-6 right-6 flex gap-2 z-10">
                 <div className="w-3 h-3 rounded-full bg-primary" />
                 <div className="w-3 h-3 rounded-full bg-secondary-foreground/30" />
                 <div className="w-3 h-3 rounded-full bg-secondary-foreground/20" />
               </div>
-            </div>
+            </a>
           </motion.div>
         </div>
       </div>
