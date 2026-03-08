@@ -1,30 +1,50 @@
-import { ArrowRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { ArrowDownRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="Creative agency workspace" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/70" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      <div className="container mx-auto px-4 relative z-10 pt-24 pb-20">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="text-5xl sm:text-7xl lg:text-[8rem] font-display leading-[0.95] tracking-tight text-foreground mb-8"
+          >
+            Short Video
+            <br />
+            <span className="italic text-primary">Strategy</span>
+          </motion.h1>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-foreground mb-6 animate-fade-up">
-            Strategie in formato short per brand che{" "}
-            <span className="text-primary">emozionano</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Trasformiamo la passione in performance attraverso i vertical video.
-          </p>
-          <div className="animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <a href="#contatti" className="btn-gold text-base rounded-full inline-flex items-center gap-2 px-8 py-4">
-              Inizia ora <ArrowRight size={18} />
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-12 font-sans"
+          >
+            Trasformiamo la passione in performance attraverso strategie in formato short per brand che emozionano.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <a
+              href="#contatti"
+              className="btn-gold text-base inline-flex items-center gap-3 px-10 py-5 text-lg group"
+            >
+              Inizia ora
+              <ArrowDownRight size={20} className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Subtle decorative circles */}
+      <div className="absolute top-1/4 -left-32 w-64 h-64 rounded-full border border-border/30 opacity-40" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full border border-primary/20 opacity-30" />
     </section>
   );
 };

@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"Work Sans"', 'system-ui', 'sans-serif'],
-        display: ['"Work Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -83,7 +83,7 @@ export default {
           to: { height: "0" },
         },
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "0%": { opacity: "0", transform: "translateY(40px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "slide-in-left": {
@@ -94,7 +94,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-up": "fade-up 0.8s ease-out forwards",
+        "fade-up": "fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "slide-in-left": "slide-in-left 0.6s ease-out forwards",
       },
     },
