@@ -10,6 +10,14 @@ const stats = [
 ];
 
 const HeroSection = () => {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    setPlaying(true);
+    setTimeout(() => videoRef.current?.play(), 100);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
       <div className="container mx-auto px-4 relative z-10 pt-28 pb-20">
