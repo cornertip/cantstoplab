@@ -16,8 +16,10 @@ const CaseStudy = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <p className="text-primary font-sans font-medium text-sm uppercase tracking-widest mb-6">Caso Studio</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-secondary-foreground mb-20 leading-[1.05]">
+          <div className="flex justify-center mb-6">
+            <span className="bg-primary text-primary-foreground font-sans font-medium text-sm uppercase tracking-widest px-5 py-2 rounded-full">Caso Studio</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-secondary-foreground mb-20 leading-[1.05] text-center">
             Come abbiamo rivoluzionato il digital di un brand <span className="italic text-primary">Food</span>
           </h2>
 
