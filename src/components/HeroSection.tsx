@@ -33,7 +33,7 @@ const HeroSection = () => {
               transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-base sm:text-lg text-muted-foreground max-w-lg mb-8 font-sans"
             >
-              CantStopLab è la Social Media Marketing Agency specializzata in short video. Strategie, contenuti e advertising per trasformare i tuoi social in una macchina di crescita.
+              CantStopLab è la Social Media Marketing Agency che usa gli short video come leva strategica di branding e posizionamento. Contenuti, advertising e strategie per far emergere il tuo brand.
             </motion.p>
 
             <motion.div
