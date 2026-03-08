@@ -15,44 +15,45 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="z-10">
-          <img
-            src={cantstopLogo}
-            alt="CantStopLab"
-            className={`transition-all duration-500 ${scrolled ? "h-7" : "h-8"}`}
-          />
-        </a>
+      <div className="container mx-auto px-4">
+        {/* Single white pill containing logo + nav + CTA */}
+        <div className="hidden md:flex items-center justify-between rounded-full bg-card shadow-[0_2px_24px_-4px_rgba(0,0,0,0.1)] transition-all duration-500 pl-6 pr-1">
+          <a href="#" className="flex-shrink-0 mr-8">
+            <img src={cantstopLogo} alt="CantStopLab" className="h-6 object-contain" />
+          </a>
 
-        {/* Desktop Nav - Cream Floating Bar */}
-        <div
-          className="hidden md:flex items-center rounded-full bg-card backdrop-blur-xl border border-border/40 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] transition-all duration-500"
-        >
-          {["Servizi", "Casi Studio", "Chi Siamo", "Blog"].map((label, i) => (
-            <span key={label} className="flex items-center">
-              {i > 0 && <span className="w-px h-4 bg-primary/15" />}
-              <a
-                href={`#${label === "Casi Studio" ? "portfolio" : label === "Chi Siamo" ? "chi-siamo" : label.toLowerCase()}`}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3"
-              >
-                {label}
-              </a>
-            </span>
-          ))}
+          <div className="flex items-center">
+            {["Servizi", "Casi Studio", "Chi Siamo", "Blog"].map((label, i) => (
+              <span key={label} className="flex items-center">
+                {i > 0 && <span className="w-px h-5 bg-border" />}
+                <a
+                  href={`#${label === "Casi Studio" ? "portfolio" : label === "Chi Siamo" ? "chi-siamo" : label.toLowerCase()}`}
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3"
+                >
+                  {label}
+                </a>
+              </span>
+            ))}
+          </div>
+
           <a
             href="#contatti"
-            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 transition-colors duration-300 group"
+            className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 my-1 ml-4 transition-colors duration-300 group"
           >
             Contatti
             <ArrowDownRight size={16} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button className="md:hidden text-foreground z-10" onClick={() => setOpen(!open)}>
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile: logo + hamburger */}
+        <div className="md:hidden flex items-center justify-between rounded-full bg-card shadow-[0_2px_24px_-4px_rgba(0,0,0,0.1)] px-5 py-3">
+          <a href="#">
+            <img src={cantstopLogo} alt="CantStopLab" className="h-6 object-contain" />
+          </a>
+          <button className="text-foreground" onClick={() => setOpen(!open)}>
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
