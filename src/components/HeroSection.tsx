@@ -82,26 +82,43 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="flex justify-center"
           >
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="aspect-[9/16] w-[280px] sm:w-[320px] rounded-[2rem] bg-secondary overflow-hidden relative group cursor-pointer block"
+            <div
+              className="aspect-[9/16] w-[280px] sm:w-[320px] rounded-[2rem] bg-secondary overflow-hidden relative group cursor-pointer"
+              onClick={!playing ? handlePlay : undefined}
             >
+              {/* Video */}
+              <video
+                ref={videoRef}
+                src="/video_cantstoplab.mp4"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${playing ? 'opacity-100' : 'opacity-0'}`}
+                playsInline
+                controls={playing}
+                loop
+              />
+              {/* Thumbnail */}
+              <img
+                src={teamThumb}
+                alt="Scopri CantStopLab"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${playing ? 'opacity-0' : 'opacity-100'}`}
+              />
               {/* Play button overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
-                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                  <Play size={32} className="text-primary-foreground ml-1" fill="currentColor" />
+              {!playing && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
+                  <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                    <Play size={32} className="text-primary-foreground ml-1" fill="currentColor" />
+                  </div>
+                  <p className="text-secondary-foreground/70 font-sans text-sm">Scopri CantStopLab</p>
                 </div>
-                <p className="text-secondary-foreground/70 font-sans text-sm">Guarda il nostro showreel</p>
-              </div>
+              )}
               {/* Decorative dots */}
-              <div className="absolute top-6 right-6 flex gap-2 z-10">
-                <div className="w-3 h-3 rounded-full bg-primary" />
-                <div className="w-3 h-3 rounded-full bg-secondary-foreground/30" />
-                <div className="w-3 h-3 rounded-full bg-secondary-foreground/20" />
-              </div>
-            </a>
+              {!playing && (
+                <div className="absolute top-6 right-6 flex gap-2 z-10">
+                  <div className="w-3 h-3 rounded-full bg-primary" />
+                  <div className="w-3 h-3 rounded-full bg-secondary-foreground/30" />
+                  <div className="w-3 h-3 rounded-full bg-secondary-foreground/20" />
+                </div>
+              )}
+            </div>
           </motion.div>
         </div>
       </div>
