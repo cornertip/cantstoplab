@@ -10,13 +10,16 @@ const SocialProofBar = () => {
   const ref = useScrollReveal();
 
   return (
-    <section ref={ref} className="section-fade-in py-10 bg-background">
+    <section ref={ref} className="section-fade-in py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-20">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-4xl sm:text-5xl font-display italic text-foreground mb-1">{s.number}</p>
-              <p className="text-xs font-sans font-medium text-muted-foreground uppercase tracking-widest">{s.label}</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-24">
+          {stats.map((s, i) => (
+            <div key={s.label} className="text-center group">
+              <p className="text-5xl sm:text-6xl font-display italic text-foreground mb-2">{s.number}</p>
+              <p className="text-sm font-sans font-medium text-muted-foreground uppercase tracking-widest">{s.label}</p>
+              {i < stats.length - 1 && (
+                <span className="hidden sm:block absolute" />
+              )}
             </div>
           ))}
         </div>

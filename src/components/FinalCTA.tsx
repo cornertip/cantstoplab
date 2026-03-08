@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FinalCTA = () => {
@@ -19,7 +19,7 @@ const FinalCTA = () => {
           className="btn-gold text-lg inline-flex items-center gap-3 px-12 py-5 group"
         >
           Prenota la tua Call
-          <ArrowRight size={20} className="group-hover:rotate-[-45deg] transition-transform duration-300" />
+          <ArrowDownRight size={20} className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
         </a>
       </div>
     </section>

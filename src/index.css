@@ -84,7 +84,7 @@
 
   .btn-gold:hover {
     filter: saturate(1.3) brightness(1.05);
-    @apply shadow-lg;
+    @apply shadow-lg scale-105;
   }
 
   .scrollbar-hide {
