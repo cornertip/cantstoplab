@@ -33,7 +33,7 @@ const Testimonials = () => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center"
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-8 border-2 border-primary/20">
+              <div className="w-40 h-40 rounded-full overflow-hidden mb-8 border-2 border-primary/20">
                 <img src={testimonials[current].photo} alt={testimonials[current].name} className="w-full h-full object-cover" />
               </div>
 
