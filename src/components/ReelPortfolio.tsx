@@ -86,7 +86,7 @@ const ReelPortfolio = () => {
               <div className="w-16 h-16 rounded-full bg-popover/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                 <Play size={28} fill="currentColor" />
               </div>
-              <p className="font-sans font-semibold text-sm tracking-wide">{r.client}</p>
+              <span className="font-sans font-semibold text-sm tracking-wide bg-white text-foreground px-4 py-1.5 rounded-full">{r.client}</span>
             </div>
           </div>
         ))}
