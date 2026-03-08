@@ -28,7 +28,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-display leading-[0.95] tracking-tight text-foreground mb-6"
+              className="text-5xl sm:text-6xl lg:text-7xl font-display leading-[0.95] tracking-tight text-foreground mb-6"
             >
               Il Tuo Brand Merita
               <br />

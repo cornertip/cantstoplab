@@ -25,7 +25,7 @@ const Footer = () => {
 
           <div>
             <h4 className="font-sans font-semibold text-sm mb-5 uppercase tracking-widest text-secondary-foreground/50">Social</h4>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center sm:justify-start">
               <a href="#" className="w-11 h-11 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                 <Instagram size={18} />
               </a>
