@@ -33,7 +33,7 @@ const HeroSection = () => {
               transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-base sm:text-lg text-muted-foreground max-w-lg mb-8 font-sans"
             >
-              CantStopLab è la Social Media Marketing Agency che sa usare i social nella strategia di branding e posizionamento. Contenuti, advertising e strategie per far emergere il tuo brand.
+              CantStopLab è la Social Media Marketing Agency che sa come usare i social nella strategia di branding e posizionamento. Sviluppiamo strategie e realizziamo contenuti per far emergere il tuo brand.
             </motion.p>
 
             <motion.div
