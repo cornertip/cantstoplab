@@ -45,7 +45,6 @@ const Navbar = () => {
           <a href="#blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
             Blog
           </a>
-          <span className="w-px h-5 bg-border" />
           <a
             href="#contatti"
             className="flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm rounded-full px-6 py-3 m-1 transition-colors duration-300 group"
