@@ -42,7 +42,7 @@ const Navbar = () => {
             Chi Siamo
           </a>
           <span className="w-px h-5 bg-border" />
-          <a href="#blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
+          <a href="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors px-6 py-3">
             Blog
           </a>
           <a
@@ -74,7 +74,7 @@ const Navbar = () => {
               { href: "#servizi", label: "Servizi" },
               { href: "#portfolio", label: "Casi Studio" },
               { href: "#chi-siamo", label: "Chi Siamo" },
-              { href: "#blog", label: "Blog" },
+              { href: "/blog", label: "Blog" },
             ].map((item, i) => (
               <motion.a
                 key={item.href}
