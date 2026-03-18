@@ -74,7 +74,7 @@ const Navbar = () => {
               { href: "#servizi", label: "Servizi" },
               { href: "#portfolio", label: "Casi Studio" },
               { href: "#chi-siamo", label: "Chi Siamo" },
-              { href: "#blog", label: "Blog" },
+              { href: "/blog", label: "Blog" },
             ].map((item, i) => (
               <motion.a
                 key={item.href}
