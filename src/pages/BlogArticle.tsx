@@ -12,7 +12,6 @@ import articleHero from "@/assets/article-hero.jpg";
 const BlogArticle = () => {
   const [email, setEmail] = useState("");
   const heroRef = useScrollReveal();
-  const contentRef = useScrollReveal();
   const ctaRef = useScrollReveal();
 
   const handleNewsletterSubmit = () => {
