@@ -192,3 +192,52 @@
 .v2-theme blockquote {
   font-family: 'Instrument Serif', Georgia, serif !important;
 }
+
+/* Article prose styling */
+.prose-article {
+  @apply text-foreground font-sans text-[17px] leading-[1.85];
+}
+
+.prose-article p {
+  @apply mb-6;
+}
+
+.prose-article h2 {
+  @apply text-3xl sm:text-4xl font-display text-foreground mt-14 mb-6 leading-tight;
+}
+
+.prose-article h3 {
+  @apply text-xl sm:text-2xl font-display text-foreground mt-10 mb-4 leading-snug;
+}
+
+.prose-article strong {
+  @apply font-semibold text-foreground;
+}
+
+.prose-article em {
+  @apply italic;
+}
+
+.prose-article ul, .prose-article ol {
+  @apply mb-6 pl-6 space-y-2;
+}
+
+.prose-article ul {
+  @apply list-disc;
+}
+
+.prose-article ol {
+  @apply list-decimal;
+}
+
+.prose-article li {
+  @apply text-foreground;
+}
+
+.prose-article blockquote {
+  @apply border-l-4 border-primary pl-6 py-3 my-8 italic text-xl font-display text-muted-foreground bg-muted/50 rounded-r-xl pr-6;
+}
+
+.prose-article a {
+  @apply text-primary underline underline-offset-4 hover:text-primary/80 transition-colors;
+}
