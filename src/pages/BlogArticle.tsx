@@ -12,7 +12,6 @@ import articleHero from "@/assets/article-hero.jpg";
 const BlogArticle = () => {
   const [email, setEmail] = useState("");
   const heroRef = useScrollReveal();
-  const contentRef = useScrollReveal();
   const ctaRef = useScrollReveal();
 
   const handleNewsletterSubmit = () => {
@@ -81,7 +80,7 @@ const BlogArticle = () => {
       </section>
 
       {/* Article Content */}
-      <section ref={contentRef} className="section-fade-in pb-20">
+      <section className="pb-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <article className="prose-article">
             <p>
