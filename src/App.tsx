@@ -8,6 +8,7 @@ import Versione2 from "./pages/Versione2";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import Contatti from "./pages/Contatti";
+import CasiStudio from "./pages/CasiStudio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
