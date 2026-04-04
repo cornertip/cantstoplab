@@ -8,6 +8,7 @@ import Versione2 from "./pages/Versione2";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import Contatti from "./pages/Contatti";
+import CasiStudio from "./pages/CasiStudio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/nicchia-di-mercato" element={<BlogArticle />} />
           <Route path="/contatti" element={<Contatti />} />
+          <Route path="/casi-studio" element={<CasiStudio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
