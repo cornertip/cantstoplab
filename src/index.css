@@ -46,10 +46,13 @@
 
     --radius: 0.75rem;
 
-    --navy: 205 80% 13%;
+    --navy: 201 100% 15%;
     --navy-foreground: 0 0% 100%;
-    --gold: 42 100% 48%;
-    --cream: 0 0% 100%;
+    --gold: 45 100% 50%;
+    --cream: 38 47% 95%;
+    --csl-dark: 201 100% 15%;
+    --csl-warm: 38 47% 95%;
+    --csl-yellow: 45 100% 50%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
